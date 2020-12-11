@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<!--
+	Projection by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+        <%- include('head.ejs') %>
+    </head>
+	<body class="subpage">
+        <%- include('navigation.ejs') %>
+		<!-- Three -->
+			<section id="three" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+                        <h2><strong>건강 맞춤<br>푸드 추천 서비스</strong></h2>
+                        <!-- <hr style="border: solid 1px rgb(108, 192, 130);"> -->
+						<!-- <p>Aliquam erat volutpat nam dui </p> -->
+					</header>
+                    
+                    
+                    
+                    
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-xl btn-primary" id="next" style="width: 100%;" >
+                        다음으로
+                    </button>
+                </div>
+			</section>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script>
+                $("#next").click(function(){
+                        $(location).attr('href', 'http://localhost:3000/health_result');
+                })
+            </script>
+	</body>
+</html>
