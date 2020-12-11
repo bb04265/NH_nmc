@@ -13,6 +13,7 @@ app.get('/index', function(req,res){
     res.render('index');
 });
 
+//잔액 조회(소연)
 app.get('/inquireBalance', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
 
@@ -42,5 +43,79 @@ app.get('/inquireBalance', function(req, res) {
         console.log(balanceData);
     });
 });
+
+//거래내역 조회(미래)
+app.get('/inquireTransactionHistory', function(req, res) {
+    var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
+
+    var option = {
+        method: "POST",
+        url: "https://developers.nonghyup.com/InquireTransactionHistory.nh",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "Header": {
+                "ApiNm": "InquireTransactionHistory",
+                "Tsymd": "20201211",
+                "Trtm": "112428",
+                "Iscd": "000700",
+                "FintechApsno": "001",
+                "ApiSvcCd": "ReceivedTransferA",
+                "IsTuno": isTuno,
+                "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
+              },
+            "Bncd": "011",
+            "Acno": "3020000002982",
+            "Insymd": "20201210",
+            "Ineymd": "20201211",
+            "TrnsDsnc": "A",
+            "Lnsq": "DESC",
+            "PageNo": "1",
+            "Dmcnt": "100"
+        })
+    };
+
+    request(option, function(err, response, body){
+        var historyData = JSON.parse(body);
+        console.log(historyData);
+    });
+});
+
+//출금이체(미래)
+app.get('/drawingTransfer', function(req, res) {
+    var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
+
+    //등록한 계좌 중 선택해서 해도 좋겠어요 시간 남으면... ^^
+    var option = {
+        method: "POST",
+        url: "https://developers.nonghyup.com/DrawingTransfer.nh",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "Header": {
+                "ApiNm": "DrawingTransfer",
+                "Tsymd": "20201211",
+                "Trtm": "112428",
+                "Iscd": "000700",
+                "FintechApsno": "001",
+                "ApiSvcCd": "DrawingTransferA",
+                "IsTuno": isTuno,
+                "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
+              },
+              "FinAcno": "00820100007000000000000004413",
+              "Tram": "50000",
+              "DractOtlt": "붉은 야채_" + isTuno
+        })
+    };
+
+    request(option, function(err, response, body){
+        var drawingTransferData = JSON.parse(body);
+        console.log(drawingTransferData);
+    });
+});
+
+
 
 app.listen(3000);
