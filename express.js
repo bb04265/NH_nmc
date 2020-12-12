@@ -17,6 +17,9 @@ app.get('/', function(req, res) {
 app.get('/index', function(req,res){
     res.render('index');
 });
+app.get('/elements', function(req,res){
+    res.render('elements');
+});
 
 app.get('/health', function(req, res){
     res.render('health');
@@ -40,6 +43,14 @@ app.get('/nbti_start', (req, res)=>{
 
 app.get('/inquire_balance', (req, res)=>{
     res.render('inquire_balance')
+});
+
+app.get('/nbti_survey', (req, res)=>{
+    res.render('nbti_survey')
+});
+
+app.get('/nbti_result', (req, res)=>{
+    res.render('nbti_result')
 });
 
 function getFormatDate(date){
