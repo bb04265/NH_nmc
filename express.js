@@ -18,6 +18,9 @@ app.get('/', function(req, res) {
 app.get('/index', function(req,res){
     res.render('index');
 });
+app.get('/elements', function(req,res){
+    res.render('elements');
+});
 
 app.get('/health', function(req, res){
     res.render('health');
@@ -39,9 +42,19 @@ app.get('/nbti_start', (req, res)=>{
     res.render('nbti_start')
 })
 
+function getFormatData(date){
+    var year = date.getFullYear();
+    var month = (1+date.getMonth());
+    month = month >= 10 ? month : '0' + month;
+    var day = date.getDate();
+    day = day >= 10 ? day : '0' + day;
+    return year + '' + month + '' + day;
+}
+
 //잔액 조회(소연)
 app.get('/inquireBalance', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
+    var today = getFormatData(new Date());
 
     var option = {
         method: "POST",
@@ -52,7 +65,7 @@ app.get('/inquireBalance', function(req, res) {
         body: JSON.stringify({
                 "Header": {
                     "ApiNm": "InquireBalance",
-                    "Tsymd": "20201211",
+                    "Tsymd": today,
                     "Trtm": "112428",
                     "Iscd": "000697",
                     "FintechApsno": "001",
@@ -73,7 +86,7 @@ app.get('/inquireBalance', function(req, res) {
 //거래내역 조회(미래)
 app.get('/inquireTransactionHistory', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
-
+    var today = getFormatData(new Date());
     var option = {
         method: "POST",
         url: "https://developers.nonghyup.com/InquireTransactionHistory.nh",
@@ -83,7 +96,7 @@ app.get('/inquireTransactionHistory', function(req, res) {
         body: JSON.stringify({
             "Header": {
                 "ApiNm": "InquireTransactionHistory",
-                "Tsymd": "20201211",
+                "Tsymd": today,
                 "Trtm": "112428",
                 "Iscd": "000700",
                 "FintechApsno": "001",
@@ -111,7 +124,7 @@ app.get('/inquireTransactionHistory', function(req, res) {
 //출금이체(미래)
 app.get('/drawingTransfer', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
-
+    var today = getFormatData(new Date());
     //등록한 계좌 중 선택해서 해도 좋겠어요 시간 남으면... ^^
     var option = {
         method: "POST",
@@ -122,7 +135,7 @@ app.get('/drawingTransfer', function(req, res) {
         body: JSON.stringify({
             "Header": {
                 "ApiNm": "DrawingTransfer",
-                "Tsymd": "20201211",
+                "Tsymd": today,
                 "Trtm": "112428",
                 "Iscd": "000700",
                 "FintechApsno": "001",

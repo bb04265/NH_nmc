@@ -11,25 +11,64 @@
 	<body class="subpage">
         <%- include('navigation.ejs') %>
 		<!-- Three -->
-			<section id="three" class="wrapper">
+			<section id="three" class="wrapper align-center">
 				<div class="inner">
 					<header class="align-center">
-                        <h2><strong>건강 맞춤<br>푸드 추천 서비스</strong></h2>
+                        <h2 class="welcome-font">당신의 맞춤 음식!</h2>
                         <!-- <hr style="border: solid 1px rgb(108, 192, 130);"> -->
 						<!-- <p>Aliquam erat volutpat nam dui </p> -->
+						<h4 class="myeongjo-font">당신은 <span style="color: #6cc091; font-weight: bold;">비만 </span>위험이 있습니다.</h4>
+						<p class="myeongjo-font" style="color: rgb(247, 74, 74);">콜레스테롤 수치 주의 <br> (내 콜레스테롤 수치 : 233 mg/dl, 평균 콜레스테롤 수치 : 194 mg/dl)</p>
+						<br>
+						<h4 class="myeongjo-font"><span style="color: #6cc091; font-weight: bold;">비만 </span>예방 추천 음식</h4>
 					</header>
-                    
-                    
-                    
-                    
-                </div>
-                <div class="text-center mt-4">
-                    <button class="btn btn-xl btn-primary" id="next" style="width: 100%;" >
-                        다음으로
-                    </button>
-                </div>
+					<div class="flex flex-3">
+						<article>
+							<div class="recommend1">
+								<img src="images/dasima.jpg" alt="Pic 01" 
+								style = "margin-top: 50px; margin-bottom: 50px;" />
+							</div>
+							<header>
+								<h3 class="myeongjo-font"><strong>다시마</strong></h3>
+							</header>
+								<p class="myeongjo-font"><span style="color: #6cc091; font-weight: bold;">섬유질</span>이 풍부해서 소화를 돕고<br>지방의 흡수를 막습니다.</p>
+							<footer class="songmyung-font">
+								<h3 class="bold-font"><a href="http://www.nonghyupmall.com/BC1F010M/srchTotalList.nh?userLogin=false&searchTerm=%EB%8B%A4%EC%8B%9C%EB%A7%88&smartTerm=&totalSearchTerm=&chanC=1101&CHAN_C=1101&brncfc=%2C0001%2C7001&page=1&listDiv=60&order=%EC%A0%95%ED%99%95%EB%8F%84%EC%88%9C&selectCat=&selectMk=&selectBene=&sCtgrCArr=&listType=&minCost=&maxCost=&reSearchTerm=" class="button">구매하기</a></h3>
+							</footer>
+						</article>
+						<article>
+							<div class="recommend2">
+								<img src="images/greentea.jpg" alt="Pic 02" 
+								style = "margin-top: 50px; margin-bottom: 50px;" />
+							</div>
+							<header>
+								<h3 class="myeongjo-font"><strong>녹차</strong></h3>
+							</header>
+							<p class="myeongjo-font">혈전 형성을 막아주고 <br><span style="color: #6cc091; font-weight: bold;">콜레스테롤과 혈당</span>을 낮추는데 효과적입니다.<br> </p>
+							
+							<footer class="songmyung-font">
+								<h3 class="bold-font"><a href="http://www.nonghyupmall.com/BC1F010M/srchTotalList.nh?searchTerm_main=%EB%85%B9%EC%B0%A8%40undefined&CHAN_C=1101&chanC=1101" class="button">구매하기</a></h3>
+								
+								<h3 class="bold-font" style="margin-top: 100px;"><a href="index" class="button">메인으로</a></h3>
+							</footer>
+						</article>
+						<article>
+							<div class="recommend3">
+								<img src="images/bori.jpg" alt="Pic 03" 
+								style = "margin-top: 50px; margin-bottom: 50px;" />
+							</div>
+							<header>
+								<h3 class="myeongjo-font"><strong>새싹보리</strong></h3>
+							</header>
+							<p class="myeongjo-font"><span style="color: #6cc091; font-weight: bold;">낮은 열랑</span>에 중성지방 생성과 합성을 막고<br> 지방분해에 높은 효능을 보입니다.</p>
+							<footer class="songmyung-font">
+								<h3 class="bold-font"><a href="http://www.nonghyupmall.com/BC1F010M/srchTotalList.nh?searchTerm_main=%EC%83%88%EC%8B%B9%EB%B3%B4%EB%A6%AC%40undefined&CHAN_C=1101&chanC=1101" class="button">구매하기</a></h3>
+							</footer>
+						</article>
+					</div>	
+				</div>	
 			</section>
-
+			
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
