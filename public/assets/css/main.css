@@ -13,11 +13,7 @@
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
-<<<<<<< HEAD
-		border: 0;
-=======
 		border: 0; 
->>>>>>> 86d9c4aa92a265397175d1fe69e2d64864a41950
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
@@ -2531,11 +2527,7 @@
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		background-color: transparent;
 		box-shadow: inset 0 0 0 3px #6cc091;
-<<<<<<< HEAD
-		color: #6cc091 !important;
-=======
 		color: #6cc091 ;
->>>>>>> 86d9c4aa92a265397175d1fe69e2d64864a41950
 		border-radius: 30px;
 		border: 0;
 		cursor: pointer;
@@ -2925,15 +2917,9 @@
 
 	#banner {
 		padding: 8em 0 9em 0;
-<<<<<<< HEAD
-		background-image: url(../../images/banner.jpg);
-		background-size: cover;
-		background-position: bottom;
-=======
 		background-image: url(../../images/rainbow4.png);
 		background-size: cover;
 		background-position: center;
->>>>>>> 86d9c4aa92a265397175d1fe69e2d64864a41950
 		background-attachment: fixed;
 		background-repeat: no-repeat;
 		text-align: center;
@@ -2942,11 +2928,7 @@
 
 		#banner:before {
 			content: '';
-<<<<<<< HEAD
-			background: rgba(75, 75, 93, 0.85);
-=======
 			background: rgba(87, 87, 87, 0.75);
->>>>>>> 86d9c4aa92a265397175d1fe69e2d64864a41950
 			position: absolute;
 			width: 100%;
 			height: 100%;
