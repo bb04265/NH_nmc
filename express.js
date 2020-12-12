@@ -51,7 +51,7 @@ function getFormatDate(date){
     return  year + '' + month + '' + day;       //'-' 추가하여 yyyy-mm-dd 형태 생성 가능
 }
 
-//잔액 조회(소연)
+//잔액 조회
 app.post('/inquire_balance', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
     var today = getFormatDate(new Date());
@@ -84,8 +84,8 @@ app.post('/inquire_balance', function(req, res) {
     });
 });
 
-//거래내역 조회(미래)
-app.get('/inquireTransactionHistory', function(req, res) {
+//거래내역 조회
+app.post('/inquire_transaction_history', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
     var today = getFormatDate(new Date());
 
@@ -120,10 +120,11 @@ app.get('/inquireTransactionHistory', function(req, res) {
     request(option, function(err, response, body){
         var historyData = JSON.parse(body);
         console.log(historyData);
+        res.json(historyData);
     });
 });
 
-//출금이체(미래)
+//출금이체
 app.get('/drawingTransfer', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
     var today = getFormatDate(new Date());
