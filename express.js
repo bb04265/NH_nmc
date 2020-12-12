@@ -49,6 +49,10 @@ app.get('/inquire_balance', (req, res)=>{
     res.render('inquire_balance')
 });
 
+app.get('/account', (req, res)=>{
+    res.render('account')
+});
+
 function getFormatDate(date){
     var year = date.getFullYear();              //yyyy
     var month = (1 + date.getMonth());          //M

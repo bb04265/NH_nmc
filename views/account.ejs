@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <%- include('head.ejs') %>
+    </head>
+	<body class="subpage">
+        <%- include('navigation.ejs') %>
+		<!-- Three -->
+        <section id="three" class="wrapper">
+            <div class="inner">
+                <header class="align-center">
+                    <h2 class="welcome-font">계좌 정보</h2>
+                </header>
+            </div>
+            <div class="inner">
+                <form action="#" method="post">
+                    <div class="field first">
+                        <label for="name">이름</label>
+                        <input name="name" id="name" type="text" placeholder="Name">
+                    </div>
+                    <br>
+                    <div class="field">
+                        <label for="birth">생년월일</label>
+                        <input name="birth" id="birth" type="text" placeholder="Birth">
+                    </div>
+                    <br>
+                    <div class="field">
+                        <label for="bank">은행</label>
+                        <input name="bank" id="bank" type="text" placeholder="Bank">
+                    </div>
+                    <br>
+                    <div class="field">
+                        <label for="account">계좌번호</label>
+                        <input name="account" id="account" type="text" placeholder="Account">
+                    </div>
+                </form>
+            </div>
+            <div class="prefer" style = "margin-top: 100px;" > </div>
+            <div class="text-center mt-4" style="text-align:center">
+                <h5 class="bold-font" style="font-size: 20px ;"><a href="health_result" class="button">다음으로</a></h5>
+            </div>
+        </section>
+		<!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            $("#next").click(function(){
+                    $(location).attr('href', 'http://localhost:3000/health_result');
+            })
+        </script>
+	</body>
+</html>
+
