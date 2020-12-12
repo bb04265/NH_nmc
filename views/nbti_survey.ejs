@@ -8,145 +8,155 @@
         <%- include('navigation.ejs') %>
         
 		<!-- Three -->
-            <section id="three" class="wrapper"  style="background-color: rgb(255, 222, 199);">
+            <section id="three" class="wrapper"  style="background-color: rgba(255, 249, 158, 0.555);">
                 
 				<div class="inner">
 					<header class="align-center">
 
                         <h4 class="myeongjo-font">
-
-                            <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
-                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                                    1. 무슨 색을 가장 좋아하세요?<br><br>
-                                    
-                                    <input type="radio" id="color_Red" name="demo-priority">
-                                    <label for="color_Red">빨간색</label>
-                                    <input type="radio" id="color_Yellow" name="demo-priority">
-                                    <label for="color_Yellow">노란색</label>
-                                    <input type="radio" id="color_Green" name="demo-priority">
-                                    <label for="color_Green">초록색</label>
-                                    <input type="radio" id=color_Purple name="demo-priority">
-                                    <label for="color_Purple">보라색</label><br><br>
-                                </form>
+                            <div class="box" style="border-color: #6cc091; border-width: 4px; width: 100%;">
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        1. 무슨 색을 가장 좋아하세요?</strong><br><br>
+                                        
+                                        <input type="radio" id="color_Red" name="demo-priority">
+                                        <label for="color_Red" style="color: rgb(223, 2, 2); font-weight: bolder;">빨간색</label>
+                                        <input type="radio" id="color_Yellow" name="demo-priority">
+                                        <label for="color_Yellow" style="color: rgb(255, 217, 0); font-weight: bolder;">노란색</label><br>
+                                        <input type="radio" id="color_Green" name="demo-priority">
+                                        <label for="color_Green" style="color: rgb(29, 177, 0); font-weight: bolder;">초록색</label>
+                                        <input type="radio" id=color_Purple name="demo-priority">
+                                        <label for="color_Purple" style="color: rgb(132, 0, 255); font-weight: bolder;">보라색</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 80%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        2. 내가 즐겨듣는 노래는?</strong><br><br>
+                                        <input type="radio" id="song_New" name="demo-priority">
+                                        <label for="song_New">최신곡   </label>
+                                        <input type="radio" id="song_Top" name="demo-priority">
+                                        <label for="song_Top">탑100   </label><br>
+                                        <input type="radio" id="song_Recm" name="demo-priority">
+                                        <label for="song_Recm">주변추천  </label>
+                                        <input type="radio" id="song_Past" name="demo-priority">
+                                        <label for="song_Past">지나간 명곡</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        3. 어떤 바나나를 가져갈까?</strong><br><br>
+                                        <input type="radio" id="banana_Big" name="demo-priority">
+                                        <label for="banana_Big">하나만 먹어도 배부를 커다란 바나나</label>
+                                        <input type="radio" id="banana_Fat" name="demo-priority">
+                                        <label for="banana_Fat">통통하고 동그란 바나나</label>
+                                        <input type="radio" id="banana_Prt" name="demo-priority">
+                                        <label for="banana_Prt">샛노랗게 잘 익은 예쁜 바나나</label>
+                                        <input type="radio" id="banana_Str" name="demo-priority">
+                                        <label for="banana_Str">처음보는 생김새의 독특한 바나나</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        4. 공원 구석에서 불의를 목격해버렸다. 이걸 어쩌지?</strong><br><br>
+                                        <input type="radio" id="park_Stop" name="demo-priority">
+                                        <label for="park_Stop">이 못된 녀석들! 일단 말리기</label>
+                                        <input type="radio" id="park_Rpt" name="demo-priority">
+                                        <label for="park_Rpt">멀찍이 떨어져 경찰에 신고하기</label>
+                                        <input type="radio" id="park_Avoid" name="demo-priority">
+                                        <label for="park_Avoid">마음은 불편하지만 피할 수 밖에..</label>
+                                        <input type="radio" id="park_Save" name="demo-priority">
+                                        <label for="park_Save">애 앞에서 이럼 안되지! 아이라도 구하기</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        5. 영화관에 왔다. 어디 앉지?</strong><br><br>
+                                        <input type="radio" id="movie_Corner" name="demo-priority">
+                                        <label for="movie_Corner">나는 구석이 좋아. 뒤쪽 구석자리</label>
+                                        <input type="radio" id="movie_Front" name="demo-priority">
+                                        <label for="movie_Front">몸이 편한게 최고! 다리 펼 수 있는 맨앞자리</label>
+                                        <input type="radio" id="movie_Center" name="demo-priority">
+                                        <label for="movie_Center">너무 가깝지도 멀지도 않은, 딱 정중앙 자리</label>
+                                        <input type="radio" id="movie_Middle" name="demo-priority">
+                                        <label for="movie_Middle">한눈에 다 들어와야 제맛! 맨 뒤 중간 자리</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        6. 영화 보면서 먹을 것을 골라보자</strong><br><br>
+                                        <input type="radio" id="movie_Combo" name="demo-priority">
+                                        <label for="movie_Combo">나쵸도 오징어도 다 맛볼래! 시네마콤보</label>
+                                        <input type="radio" id="movie_Pnc" name="demo-priority">
+                                        <label for="movie_Pnc">영화관 간식의 정석! 팝콘&콜라</label>
+                                        <input type="radio" id="movie_Goods" name="demo-priority">
+                                        <label for="movie_Goods">이건 진짜 사야돼.. 귀여운 굿즈콤보</label>
+                                        <input type="radio" id="movie_Water" name="demo-priority">
+                                        <label for="movie_Water">영화 볼 땐 완전히 집중! 물 한병</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        7. 데이트! 무슨 옷을 입고 갈까요?</strong><br><br>
+                                        <input type="radio" id="clothes_Neat" name="demo-priority">
+                                        <label for="clothes_Neat">깔끔한 단색</label>
+                                        <input type="radio" id="clothes_Check" name="demo-priority">
+                                        <label for="clothes_Check">단정한 체크</label>
+                                        <input type="radio" id="clothes_Flower" name="demo-priority">
+                                        <label for="clothes_Flower">화려한 꽃무늬</label>
+                                        <input type="radio" id="clothes_Neon" name="demo-priority">
+                                        <label for="clothes_Neon">눈에 띄는 네온</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        8. 데이트 장소로는 어디가 좋을까?</strong><br><br>
+                                        <input type="radio" id="spot_Fam" name="demo-priority">
+                                        <label for="spot_Fam">SNS에서 유명한 데이트 코스</label>
+                                        <input type="radio" id="spot_Park" name="demo-priority">
+                                        <label for="spot_Park">내가 자주가는 한적한 공원</label>
+                                        <input type="radio" id="spot_Food" name="demo-priority">
+                                        <label for="spot_Food">그동안 가보고 싶었던 맛집</label>
+                                        <input type="radio" id="spot_Home" name="demo-priority">
+                                        <label for="spot_Home">편한게 최고! 집데이트</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        9. 기다리는 동안 주로 무엇을 하시나요?</strong><br><br>
+                                        <input type="radio" id="free_Fun" name="demo-priority">
+                                        <label for="free_Fun">재밌는 게 최고! 유튜브, 웹툰 보기</label>
+                                        <input type="radio" id="free_Sns" name="demo-priority">
+                                        <label for="free_Sns">다들 지금 뭐하지? SNS 조지기</label>
+                                        <input type="radio" id="free_Nothing" name="demo-priority">
+                                        <label for="free_Nothing">아~무것도 안하고 그냥 멍때리기</label>
+                                        <input type="radio" id="free_Do" name="demo-priority">
+                                        <label for="free_Do">시간을 촘촘히! 할 일 해치우기</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        10. 은행에 무엇을 하러 오셨나요?</strong><br><br>
+                                        <input type="radio" id="bank_Card" name="demo-priority">
+                                        <label for="bank_Card">또 잃어버렸네ㅎ 분실카드 재발급</label>
+                                        <input type="radio" id="bank_Account" name="demo-priority">
+                                        <label for="bank_Account">차곡차곡 저축하자! 통장 개설</label>
+                                        <input type="radio" id="bank_Exchg" name="demo-priority">
+                                        <label for="bank_Exchg">나는 프로여행러! 외화 환전</label>
+                                        <input type="radio" id="bank_Loan" name="demo-priority">
+                                        <label for="bank_Loan">앞길이 막막하다... 대출 상담</label><br><br>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="4u 12u$(small)" style="text-align: left; width: 80%;">
-                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                                    2. 내가 즐겨듣는 노래는?<br><br>
-                                    <input type="radio" id="song_New" name="demo-priority">
-                                    <label for="song_New">최신곡   </label>
-                                    <input type="radio" id="song_Top" name="demo-priority">
-                                    <label for="song_Top">탑100   </label>
-                                    <input type="radio" id="song_Recm" name="demo-priority">
-                                    <label for="song_Recm">주변추천  </label>
-                                    <input type="radio" id="song_Past" name="demo-priority">
-                                    <label for="song_Past">지나간 명곡</label><br><br>
-                                </form>
-                            </div>
-                            <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
-                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                                    3. 어떤 바나나를 가져갈까?<br><br>
-                                    <input type="radio" id="banana_Big" name="demo-priority">
-                                    <label for="banana_Big">하나만 먹어도 배부를 커다란 바나나</label>
-                                    <input type="radio" id="banana_Fat" name="demo-priority">
-                                    <label for="banana_Fat">통통하고 동그란 바나나</label>
-                                    <input type="radio" id="banana_Prt" name="demo-priority">
-                                    <label for="banana_Prt">샛노랗게 잘 익은 예쁜 바나나</label>
-                                    <input type="radio" id="banana_Str" name="demo-priority">
-                                    <label for="banana_Str">처음보는 생김새의 독특한 바나나</label><br><br>
-                                </form>
-                            </div>
-                            <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
-                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                                    4. 공원 구석에서 불의를 목격해버렸다. 이걸 어쩌지?<br><br>
-                                    <input type="radio" id="park_Stop" name="demo-priority">
-                                    <label for="park_Stop">이 못된 녀석들! 일단 말리기</label>
-                                    <input type="radio" id="park_Rpt" name="demo-priority">
-                                    <label for="park_Rpt">멀찍이 떨어져 경찰에 신고하기</label>
-                                    <input type="radio" id="park_Avoid" name="demo-priority">
-                                    <label for="park_Avoid">마음은 불편하지만 피할 수 밖에..</label>
-                                    <input type="radio" id="park_Save" name="demo-priority">
-                                    <label for="park_Save">애 앞에서 이럼 안되지! 아이라도 구하기</label><br><br>
-                                </form>
-                            </div>
-                            <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
-                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                                    5. 영화관에 왔다. 어디 앉지?<br><br>
-                                    <input type="radio" id="movie_Corner" name="demo-priority">
-                                    <label for="movie_Corner">나는 구석이 좋아. 뒤쪽 구석자리</label>
-                                    <input type="radio" id="movie_Front" name="demo-priority">
-                                    <label for="movie_Front">몸이 편한게 최고! 다리 펼 수 있는 맨앞자리</label>
-                                    <input type="radio" id="movie_Center" name="demo-priority">
-                                    <label for="movie_Center">너무 가깝지도 멀지도 않은, 딱 정중앙 자리</label>
-                                    <input type="radio" id="movie_Middle" name="demo-priority">
-                                    <label for="movie_Middle">한눈에 다 들어와야 제맛! 맨 뒤 중간 자리</label><br><br>
-                                </form>
-                            </div>
-                            <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
-                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                                    6. 영화 보면서 먹을 것을 골라보자<br><br>
-                                    <input type="radio" id="movie_Combo" name="demo-priority">
-                                    <label for="movie_Combo">나쵸도 오징어도 다 맛볼래! 시네마콤보</label>
-                                    <input type="radio" id="movie_Pnc" name="demo-priority">
-                                    <label for="movie_Pnc">영화관 간식의 정석! 팝콘&콜라</label>
-                                    <input type="radio" id="movie_Goods" name="demo-priority">
-                                    <label for="movie_Goods">이건 진짜 사야돼.. 귀여운 굿즈콤보</label>
-                                    <input type="radio" id="movie_Water" name="demo-priority">
-                                    <label for="movie_Water">영화 볼 땐 완전히 집중! 물 한병</label><br><br>
-                                </form>
-                            </div>
-                            <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
-                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                                    7. 데이트! 무슨 옷을 입고 갈까요?<br><br>
-                                    <input type="radio" id="clothes_Neat" name="demo-priority">
-                                    <label for="clothes_Neat">깔끔한 단색</label>
-                                    <input type="radio" id="clothes_Check" name="demo-priority">
-                                    <label for="clothes_Check">단정한 체크</label>
-                                    <input type="radio" id="clothes_Flower" name="demo-priority">
-                                    <label for="clothes_Flower">화려한 꽃무늬</label>
-                                    <input type="radio" id="clothes_Neon" name="demo-priority">
-                                    <label for="clothes_Neon">눈에 띄는 네온</label><br><br>
-                                </form>
-                            </div>
-                            <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
-                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                                    8. 데이트 장소로는 어디가 좋을까?<br><br>
-                                    <input type="radio" id="spot_Fam" name="demo-priority">
-                                    <label for="spot_Fam">SNS에서 유명한 데이트 코스</label>
-                                    <input type="radio" id="spot_Park" name="demo-priority">
-                                    <label for="spot_Park">내가 자주가는 한적한 공원</label>
-                                    <input type="radio" id="spot_Food" name="demo-priority">
-                                    <label for="spot_Food">그동안 가보고 싶었던 맛집</label>
-                                    <input type="radio" id="spot_Home" name="demo-priority">
-                                    <label for="spot_Home">편한게 최고! 집데이트</label><br><br>
-                                </form>
-                            </div>
-                            <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
-                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                                    9. 기다리는 동안 주로 무엇을 하시나요?<br><br>
-                                    <input type="radio" id="free_Fun" name="demo-priority">
-                                    <label for="free_Fun">재밌는 게 최고! 유튜브, 웹툰 보기</label>
-                                    <input type="radio" id="free_Sns" name="demo-priority">
-                                    <label for="free_Sns">다들 지금 뭐하지? SNS 조지기</label>
-                                    <input type="radio" id="free_Nothing" name="demo-priority">
-                                    <label for="free_Nothing">아~무것도 안하고 그냥 멍때리기</label>
-                                    <input type="radio" id="free_Do" name="demo-priority">
-                                    <label for="free_Do">시간을 촘촘히! 할 일 해치우기</label><br><br>
-                                </form>
-                            </div>
-                            <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
-                                <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                                    10. 은행에 무엇을 하러 오셨나요?<br><br>
-                                    <input type="radio" id="bank_Card" name="demo-priority">
-                                    <label for="bank_Card">또 잃어버렸네ㅎ 분실카드 재발급</label>
-                                    <input type="radio" id="bank_Account" name="demo-priority">
-                                    <label for="bank_Account">차곡차곡 저축하자! 통장 개설</label>
-                                    <input type="radio" id="bank_Exchg" name="demo-priority">
-                                    <label for="bank_Exchg">나는 프로여행러! 외화 환전</label>
-                                    <input type="radio" id="bank_Loan" name="demo-priority">
-                                    <label for="bank_Loan">앞길이 막막하다... 대출 상담</label><br><br>
-                                </form>
-                            </div>
-
                         </div>
 
 
@@ -156,9 +166,10 @@
                     
                     <div class="prefer" style = "margin-top: 100px;" > </div>
                     <div class="text-center mt-4" style="text-align:center">
-                        <button class="btn btn-xl btn-primary" id="next" onclick="location.href='nbti_result' ">
-                            다음으로
-                        </button>
+                        <h3 class="bold-font"><a href="nbti_result" class="button">결과보기</a></h3>
+                        
+                            
+                        
                         
                     </div>
                     
@@ -172,3 +183,12 @@
 
 	</body>
 </html>
+<style>
+    .radio:hover {
+        border: 1px solid;
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+        outline-color: rgba(255, 255, 255, 0);
+        outline-offset: 15px;
+        text-shadow: 1px 1px 2px #427388;
+    }
+</style>
