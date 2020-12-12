@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <%- include('head.ejs') %>
+    </head>
+	<body class="subpage">
+        <%- include('navigation.ejs') %>
+		<!-- Three -->
+			<section id="three" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+                        <h2 class="welcome-font">당신의 건강 상태에 딱 맞는<br>음식을 추천해 드릴게요~</h2>
+					</header>
+
+                    <div class="align-center">
+                        <h4 class="myeongjo-font">당신의 건강검진 내역을 분석하여<br><span style="color: rgb(94, 204, 94); font-weight: bold;">건강 상태에 맞는 음식</span>을 추천해 드려요 <br />할인쿠폰도 드린답니다</h4>
+                    </div>
+                    <br>
+                    <div class="align-center">
+                        <p>    
+                        <input type="checkbox" id="agree1" name="agree1" unchecked>
+                            <label for="agree1"><strong>개인정보 수집 및 이용 동의서</strong></label>
+                            <ul class="actions">
+                                <li><h5 class="bold-font" style="font-size: 18px ;"><a href="#" id="modal1" class="button fit small">약관보기</a></h5></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div id="modal">
+    
+                        <div class="modal_content">
+                        <h2 class = "align-center">개인정보 수집 및 이용 동의서</h2>
+                        <p class="myeongjo-font">Ⅰ. 개인정보의 수집 및 이용 동의서
+                            - 이용자가 제공한 모든 정보는 다음의 목적을 위해 활용하며, 하기 목적 이외의 용도로는 사용되지 않습니다.
+                            <br/><br/>① 개인정보 수집 항목 및 수집·이용 목적
+                            가) 수집 항목 (필수항목)
+                            <br/>- 성명(국문), 주민등록번호, 전화번호(휴대전화), 사진, 이메일, 나이, 재학정보
+                            신청서에 기재된 정보 또는 신청자가 제공한 정보
+                            <br/>나) 수집 및 이용 목적
+                           <br/>- 개인 맞춤 채소 추천 서비스 
+                           <br/><br/>② 개인정보 보유 및 이용기간
+                           <br/>- 수집·이용 동의일로부터 개인정보의 수집·이용목적을 달성할 때까지
+                           <br/><br/>③ 동의거부관리
+                            <br/>- 귀하께서는 본 안내에 따른 개인정보 수집, 이용에 대하여 동의를 거부하실 권리가 있습니다. 다만,
+                           귀하가 개인정보의 수집/이용에 동의를 거부하시는 경우에 서비스 이용에 있어 불이익이
+                           발생할 수 있음을 알려드립니다. (개인정보 보호법 제 15조 제 2항 4호) 
+                           </p>
+                           <var class="align-center">
+                           <ul class="actions">
+                            <li><a href="#" id="modal_close_btn" class="button fit small">닫기</a></li>
+                        </ul></var>    </div></div>
+                    <div class="modal_layer"></div>
+                </div>
+                    <div class="prefer" style = "margin-top: 100px;" > </div>
+                    <div class="text-center mt-4" style="text-align:center">
+                        <h5 class="bold-font" style="font-size: 20px ;"><a href="health_result" class="button">다음으로</a></h5>
+                    </div>
+			</section>
+            
+
+<style>
+    #modal {
+      position:relative;
+      width:100%;
+      height:100%;
+      z-index:1;
+      display: none;
+    }
+    
+    #modal h2 {
+      margin:0;   
+    }
+    
+    #modal button {
+      display:inline-block;
+      width:100px;
+      margin-left:calc(100% - 100px - 10px);
+      
+    }
+    
+    #modal .modal_content {
+      width:900px;
+      margin:100px auto;
+      padding:20px 10px;
+      background:rgb(255, 255, 255);
+      border:2px solid #666;
+    }
+    
+    #modal .modal_layer {
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0, 0, 0, 0.5);
+      z-index:-1;
+    }   
+    </style>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script>
+                $("#next").click(function(){
+                        $(location).attr('href', 'http://localhost:3000/health_result');
+                })
+            </script>
+    <script>
+        document.getElementById("modal1").onclick = function() {
+            document.getElementById("modal").style.display="block";
+        }
+       
+        document.getElementById("modal_close_btn").onclick = function() {
+            document.getElementById("modal").style.display="none";
+        }   
+    </script>
+	</body>
+</html>
+

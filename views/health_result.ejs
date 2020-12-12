@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<!--
+	Projection by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+        <%- include('head.ejs') %>
+    </head>
+	<body class="subpage">
+        <%- include('navigation.ejs') %>
+		<!-- Three -->
+			<section id="three" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+                        <h2 class="welcome-font">당신의 건강검진 결과 내역</h2>
+                    </header>
+                        <div class="align-center">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2"  style="border:1px solid; padding:10px;border-width: medium;">
+                        <div id="resultDiv"></div> 
+                    </div>
+                    </div>     
+                    </div>
+                   <br>
+                <div class="text-center mt-4" style="text-align:center">
+
+                    <h5 class="bold-font" style="font-size: 30px ; margin-top: 50px;"><a href="health_recommend" class="button">추천상품 보러가기</a></h5>
+
+                </div>
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script>
+                $.ajax({
+                    url:'http://localhost:3000/inspection',
+                    type : 'GET',
+                    data : {
+                    },
+                    success:function(data){
+                    console.log(data);
+                    $("#resultDiv").html(
+                    "<table border=3 bordercolor=black width=500 height=300 align=center>"+
+                    "<tr align=center><td><strong>항목</td><td><strong>상세내역</strong></td></tr>"+
+                    "<tr align=center><td>"+data.Location+"</td><td>"+data.Inspections[0].Gubun+"</td></tr>"+
+                    "<tr align=center><td><strong>항목</td><td><strong>결과</td></tr>" +
+                    "<tr align=center><td>"+data.Inspections[0].Illnesses[0].Items[0].Name+"</td><td>"+data.Inspections[0].Illnesses[0].Items[0].Name+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[0].Illnesses[0].Items[1].Name+"</td><td>"+data.Inspections[0].Illnesses[0].Items[1].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[0].Illnesses[0].Items[2].Name+"</td><td>"+data.Inspections[0].Illnesses[0].Items[2].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[0].Illnesses[0].Items[3].Name+"</td><td>"+data.Inspections[0].Illnesses[0].Items[3].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[0].Illnesses[1].Items[0].Name+"</td><td>"+data.Inspections[0].Illnesses[1].Items[0].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[0].Illnesses[2].Items[0].Name+"</td><td>"+data.Inspections[0].Illnesses[2].Items[0].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[0].Illnesses[3].Items[0].Name+"</td><td>"+data.Inspections[0].Illnesses[3].Items[0].Value+"</td></tr>"+
+                    "<tr align=center><td><strong>항목</td><td><strong>상세내역</strong></td></tr>"+
+                    "<tr align=center><td>"+data.Location+"</td><td>"+data.Inspections[1].Gubun+"</td></tr>"+
+                    "<tr align=center><td><strong>항목</td><td><strong>결과</td></tr>" +
+                    "<tr align=center><td>"+data.Inspections[1].Illnesses[0].Items[0].Name+"</td><td>"+data.Inspections[1].Illnesses[0].Items[0].Value+"</td></tr>"+
+                    "<tr align=center><td><strong>항목</td><td><strong>상세내역</strong></td></tr>"+
+                    "<tr align=center><td>"+data.Location+"</td><td>"+data.Inspections[2].Gubun+"</td></tr>"+
+                    "<tr align=center><td><strong>항목</td><td><strong>결과</td></tr>" +
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[0].Items[0].Name+"</td><td>"+data.Inspections[2].Illnesses[0].Items[0].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[1].Items[0].Name+"</td><td>"+data.Inspections[2].Illnesses[1].Items[0].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[2].Items[0].Name+"</td><td>"+data.Inspections[2].Illnesses[2].Items[0].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[2].Items[1].Name+"</td><td>"+data.Inspections[2].Illnesses[2].Items[1].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[2].Items[2].Name+"</td><td>"+data.Inspections[2].Illnesses[2].Items[2].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[2].Items[3].Name+"</td><td>"+data.Inspections[2].Illnesses[2].Items[3].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[3].Items[0].Name+"</td><td>"+data.Inspections[2].Illnesses[3].Items[0].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[3].Items[1].Name+"</td><td>"+data.Inspections[2].Illnesses[3].Items[1].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[4].Items[0].Name+"</td><td>"+data.Inspections[2].Illnesses[4].Items[0].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[4].Items[1].Name+"</td><td>"+data.Inspections[2].Illnesses[4].Items[1].Value+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[2].Illnesses[4].Items[2].Name+"</td><td>"+data.Inspections[2].Illnesses[4].Items[2].Value+"</td></tr>"+
+                    "<tr align=center><td><strong>항목</td><td><strong>상세내역</strong></td></tr>"+
+                    "<tr align=center><td>"+data.Location+"</td><td>"+data.Inspections[3].Gubun+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[3].Illnesses[0].Items[0].Name+"</td><td>"+data.Inspections[3].Illnesses[0].Items[0].Value+"</td></tr>"+
+                    "<tr align=center><td><strong>항목</td><td><strong>상세내역</strong></td></tr>"+
+                    "<tr align=center><td>"+data.Location+"</td><td>"+data.Inspections[4].Gubun+"</td></tr>"+
+                    "<tr align=center><td>"+data.Inspections[4].Illnesses[0].Items[0].Name+"</td><td>"+data.Inspections[3].Illnesses[0].Items[0].Value+"</td></tr>"+
+
+      
+                          "</table>"
+                      )
+    
+                    }
+                })       
+    
+                </script>
+                <script>
+                    $("#recommend").click(function(){
+                            $(location).attr('href', 'http://localhost:3000/health_recommend');
+                    })
+                </script>
+	</body>
+</html>
