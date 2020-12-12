@@ -16,17 +16,32 @@
 					<header class="align-center">
                         <h2 class="welcome-font">계좌 잔액 조회</h2>
                     </header>
-                        <div class="align-center">
-                        <div class="form-group floating-label-form-group controls mb-0 pb-2"  style="border:1px solid; padding:10px;border-width: medium;">
-                        <div id="resultDiv"></div> 
+
+                    <div class="align-center">
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2"  style="padding:10px;">
+                        <div id="balanceDiv"></div>
                     </div>
-                    </div>     
                     </div>
-                   <br>
+
+                    <br>
+
+                    <header class="align-center">
+                        <h2 class="welcome-font">거래 내역 조회</h2>
+                    </header>
+
+                    <div class="align-center">
+                    <div class="form-group floating-label-form-group controls mb-0 pb-2"  style="padding:10px;">
+                        <div>
+                            <table id="historyDiv" width="500" class="bold-font">
+
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <br>
                 <div class="text-center mt-4" style="text-align:center">
-
                     <h5 class="bold-font" style="font-size: 30px ; margin-top: 50px;"><a href="index" class="button">메인으로</a></h5>
-
                 </div>
 			</section>
 
@@ -42,21 +57,65 @@
                     data : {
                     },
                     success:function(data){
-                    console.log(data);
-                    $("#resultDiv").html(
-                        "<table border=3 bordercolor=black width=500 height=300 align=center>"+
-                        "<tr align=center><td><strong>계좌번호</td><td><strong>잔액</strong></td></tr>"+
-                        "<tr align=center><td>"+"3020000002982"+"</td><td>"+data.Ldbl+"</td></tr>"+
-                        "</table>"
-                      )
-    
+                        console.log(data);
+                        var balanceComma = data.Ldbl.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                        $("#balanceDiv").html(
+                            "<table width=500 height=160 align=center class=bold-font>"+
+                            "<tr align=center>"+
+                                "<td><strong><h4>계좌번호</h4></strong></td>"+
+                                "<td><strong><h4>잔액</h4></strong></td>"+
+                            "</tr>"+
+                            "<tr align=center>"+
+                                "<td><h4><font color=#aaa>"+"302-0000-0029-82"+"</font></h4></td>"+
+                                "<td><h4><font color=#aaa>"+balanceComma+"원</font></h4></td>"+
+                            "</tr>"+
+                            "</table>"
+                        )
                     }
                 })
-                </script>
-                <script>
-                    $("#recommend").click(function(){
-                        $(location).attr('href', 'http://localhost:3000/health_recommend');
-                    })
-                </script>
+            </script>
+            <script>
+                $.ajax({
+                    url:'/inquire_transaction_history',
+                    type : 'POST',
+                    data : {
+                    },
+                    success:function(data){
+                        console.log(data);
+
+                        $("#historyDiv").append(  
+                        "<tr align=center>"+
+                            "<td><strong><h4>거래일자</h4></strong></td>"+
+                            "<td><strong><h4>구분</h4></strong></td>"+
+                            "<td><strong><h4>거래금액</h4></strong></td>"+
+                            "<td><strong><h4>잔액</h4></strong></td>"+
+                        "</tr>"
+                        )
+                        
+                        for(var i = 0; i < data.TotCnt; i++) {
+                            var date = data.REC[i].Trdd.replace(/(\d{4})(\d{2})(\d{2})/g, '$1-$2-$3');
+                            var time = data.REC[i].Txtm.replace(/(\d{2})(\d{2})(\d{2})/g, '$1:$2:$3');
+                            var gubun = "";
+                            if(data.REC[i].MnrcDrotDsnc == 1 || data.REC[i].MnrcDrotDsnc == 2) {
+                                gubun = "입금";
+                            } else if(data.REC[i].MnrcDrotDsnc == 3 || data.REC[i].MnrcDrotDsnc == 4) {
+                                gubun = "출금";
+                            }
+                            var transactionComma = data.REC[i].Tram.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            var balanceComma = data.REC[i].AftrBlnc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                            $("#historyDiv").append(
+                            "<tr align=center>"+
+                                "<td><h4><font color=#aaa>"+date+" "+time+"</font></h4></td>"+
+                                "<td><h4><font color=#aaa>"+gubun+"</font></h4></td>"+
+                                "<td><h4><font color=#aaa>"+transactionComma+"원</font></h4></td>"+
+                                "<td><h4><font color=#aaa>"+balanceComma+"원</font></h4></td>"+
+                            "</tr>"
+                            ) 
+                        }
+                    }
+                })
+            </script>
 	</body>
 </html>

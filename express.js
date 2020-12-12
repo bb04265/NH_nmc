@@ -53,6 +53,14 @@ app.get('/account', (req, res)=>{
     res.render('account')
 });
 
+app.get('/nbti_survey', (req, res)=>{
+    res.render('nbti_survey')
+});
+
+app.get('/nbti_result', (req, res)=>{
+    res.render('nbti_result')
+});
+
 function getFormatDate(date){
     var year = date.getFullYear();              //yyyy
     var month = (1 + date.getMonth());          //M
@@ -62,16 +70,7 @@ function getFormatDate(date){
     return  year + '' + month + '' + day;       //'-' 추가하여 yyyy-mm-dd 형태 생성 가능
 }
 
-function getFormatData(date){
-    var year = date.getFullYear();
-    var month = (1+date.getMonth());
-    month = month >= 10 ? month : '0' + month;
-    var day = date.getDate();
-    day = day >= 10 ? day : '0' + day;
-    return year + '' + month + '' + day;
-}
-
-//잔액 조회(소연)
+//잔액 조회
 app.post('/inquire_balance', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
     var today = getFormatDate(new Date());
@@ -104,8 +103,8 @@ app.post('/inquire_balance', function(req, res) {
     });
 });
 
-//거래내역 조회(미래)
-app.get('/inquireTransactionHistory', function(req, res) {
+//거래내역 조회
+app.post('/inquire_transaction_history', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
     var today = getFormatDate(new Date());
 
@@ -125,7 +124,7 @@ app.get('/inquireTransactionHistory', function(req, res) {
                 "ApiSvcCd": "ReceivedTransferA",
                 "IsTuno": isTuno,
                 "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
-              },
+            },
             "Bncd": "011",
             "Acno": "3020000002982",
             "Insymd": "20201210",
@@ -140,10 +139,11 @@ app.get('/inquireTransactionHistory', function(req, res) {
     request(option, function(err, response, body){
         var historyData = JSON.parse(body);
         console.log(historyData);
+        res.json(historyData);
     });
 });
 
-//출금이체(미래)
+//출금이체
 app.get('/drawingTransfer', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
     var today = getFormatDate(new Date());
@@ -165,10 +165,10 @@ app.get('/drawingTransfer', function(req, res) {
                 "ApiSvcCd": "DrawingTransferA",
                 "IsTuno": isTuno,
                 "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
-              },
-              "FinAcno": "00820100007000000000000004413",
-              "Tram": "50000",
-              "DractOtlt": "노릇노릇 야채"
+            },
+            "FinAcno": "00820100007000000000000004413",
+            "Tram": "50000",
+            "DractOtlt": "노릇노릇 야채"
         })
     };
 

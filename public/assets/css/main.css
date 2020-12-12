@@ -2049,6 +2049,8 @@
 		padding: 0.75em 1em;
 	}
 
+
+
 	input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
@@ -2063,6 +2065,13 @@
 		z-index: -1;
 	}
 
+	input[type="radio"]:hover,
+	radio:hover,
+	.radio:hover {
+		background-color: rgba(108, 192, 145, 0.15);
+	}
+
+
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
@@ -2074,6 +2083,11 @@
 			padding-left: 2.4em;
 			padding-right: 0.75em;
 			position: relative;
+		}
+		input[type="radio"]:hover,
+		radio:hover,
+		.radio:hover {
+			background-color: rgba(108, 192, 145, 0.15);
 		}
 
 			input[type="checkbox"] + label:before,
