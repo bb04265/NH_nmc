@@ -17,6 +17,9 @@ app.get('/', function(req, res) {
 app.get('/index', function(req,res){
     res.render('index');
 });
+app.get('/elements', function(req,res){
+    res.render('elements');
+});
 
 app.get('/login', function(req,res){
     res.render('login');
@@ -53,6 +56,15 @@ function getFormatDate(date){
     var day = date.getDate();                   //d
     day = day >= 10 ? day : '0' + day;          //day 두자리로 저장
     return  year + '' + month + '' + day;       //'-' 추가하여 yyyy-mm-dd 형태 생성 가능
+}
+
+function getFormatData(date){
+    var year = date.getFullYear();
+    var month = (1+date.getMonth());
+    month = month >= 10 ? month : '0' + month;
+    var day = date.getDate();
+    day = day >= 10 ? day : '0' + day;
+    return year + '' + month + '' + day;
 }
 
 //잔액 조회(소연)
