@@ -39,6 +39,15 @@ app.get('/nbti_start', (req, res)=>{
     res.render('nbti_start')
 })
 
+app.get('/nbti_survey', (req, res)=>{
+    res.render('nbti_survey')
+})
+
+app.get('/nbti_result', (req, res)=>{
+    res.render('nbti_result')
+})
+
+
 //잔액 조회(소연)
 app.get('/inquireBalance', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
