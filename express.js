@@ -143,12 +143,49 @@ app.post('/inquire_transaction_history', function(req, res) {
     });
 });
 
+//입금이체
+app.post('/received_transfer', function(req, res) {
+    var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
+    var today = getFormatDate(new Date());
+
+    //등록한 계좌 중 선택해서 해도 좋겠어요 시간 남으면... ^^
+    var option = {
+        method: "POST",
+        url: "https://developers.nonghyup.com/ReceivedTransferAccountNumber.nh",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "Header": {
+                "ApiNm": "ReceivedTransferAccountNumber",
+                "Tsymd": today,
+                "Trtm": "112428",
+                "Iscd": "000700",
+                "FintechApsno": "001",
+                "ApiSvcCd": "ReceivedTransferA",
+                "IsTuno": isTuno,
+                "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
+            },
+                "Bncd": "011",
+                "Acno": "3020000002982",
+                "Tram": "300000",
+                "DractOtlt": "출금해가용~^^",
+                "MractOtlt": "적립금" 
+        })
+    };
+
+    request(option, function(err, response, body){
+        var receivedTransferData = JSON.parse(body);
+        console.log(receivedTransferData);
+        res.json(receivedTransferData);
+    });
+});
+
 //출금이체
 app.get('/drawingTransfer', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
     var today = getFormatDate(new Date());
 
-    //등록한 계좌 중 선택해서 해도 좋겠어요 시간 남으면... ^^
     var option = {
         method: "POST",
         url: "https://developers.nonghyup.com/DrawingTransfer.nh",
@@ -177,7 +214,5 @@ app.get('/drawingTransfer', function(req, res) {
         console.log(drawingTransferData);
     });
 });
-
-
 
 app.listen(3000);
