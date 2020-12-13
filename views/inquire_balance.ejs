@@ -82,7 +82,19 @@
                     data : {
                     },
                     success:function(data){
-                        console.log(data);
+                        var dateTime = null;
+                        var rec = "REC";
+
+                        for(var i = 0; i < data.Totcnt; i++) {
+                            dateTime[i] = data.REC[i].Trdd * 1000000 + data.REC[i].Txtm;
+                            alert("하하" + data.REC[2].Txtm);
+
+                            Collections.sort(data.REC);
+
+                            data.REC.sort(function(a, b) {
+                                return parseInt(b.REC[i].Txtm) - parseInt(a.REC[i].Txtm);
+                            });
+                        }
 
                         $("#historyDiv").append(  
                         "<tr align=center>"+
