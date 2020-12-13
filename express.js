@@ -136,7 +136,7 @@ app.post('/inquire_transaction_history', function(req, res) {
 });
 
 //입금이체
-app.post('/received_transfer', function(req, res) {
+app.get('/received_transfer', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
     var today = getFormatDate(new Date());
 
