@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <%- include('head.ejs') %>
+    </head>
+	<body class="subpage">
+        
+        <%- include('navigation.ejs') %>
+        
+		<!-- Three -->
+            <section id="three" class="wrapper"  style="background-color: rgb(255, 255, 255);">
+                
+				<div class="inner">
+					<header class="align-center">
+
+                        <h4 class="myeongjo-font">
+                            <div class="box" style="border-color: #6cc091; border-width: 4px; width: 100%;">
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        1. 최근 5년이내 입원한 경험이 있나요?</strong><br><br>
+                                        
+                                        <input type="radio" id="hospital_Y" name="demo-priority">
+                                        <label for="hospital_Y">Yes</label>
+                                        <input type="radio" id="hospital_N" name="demo-priority">
+                                        <label for="hospital_N">No</label><br><br>
+                                        
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 80%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        2. 하루에 얼마나 흡연하시나요?</strong><br><br>
+                                        <input type="radio" id="ciga_None" name="demo-priority">
+                                        <label for="ciga_None">아예 안함</label>
+                                        <input type="radio" id="ciga_L" name="demo-priority">
+                                        <label for="ciga_L">1 ~ 5개피</label><br>
+                                        <input type="radio" id="ciga_M" name="demo-priority">
+                                        <label for="ciga_M">6 ~ 15개피</label>
+                                        <input type="radio" id="ciga_UM" name="demo-priority">
+                                        <label for="ciga_UM">16 ~ 20개피</label><br>
+                                        <input type="radio" id="ciga_UUM" name="demo-priority">
+                                        <label for="ciga_UUM">1갑 이상</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        3. 음주량은 어느 정도인가요?</strong><br><br>
+                                        <input type="radio" id="ah__None" name="demo-priority">
+                                        <label for="ah__None">아예 안함</label>
+                                        <input type="radio" id="ah__L" name="demo-priority">
+                                        <label for="ah__L">1 ~ 5잔</label><br>
+                                        <input type="radio" id="ah__M" name="demo-priority">
+                                        <label for="ah__M">6 ~ 15잔</label>
+                                        <input type="radio" id="ah__UM" name="demo-priority">
+                                        <label for="ah__UM">1병 이상</label><br>
+                                        <input type="radio" id="ah__UUM" name="demo-priority">
+                                        <label for="ah__UUM">3병 이상</label><br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        4. 가족력 질환이 있으신가요?</strong><br><br>
+                                        <input type="text" name="demo-name" id="disease" value="" placeholder="여기에 적어주세요." />
+                                        <br><br>
+                                    </form>
+                                </div>
+                                <div class="4u 12u$(small)" style="text-align: left; width: 50%;">
+                                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                                        <strong style="font-size: larger;">
+                                        5. 해당 되는 생활습관에 체크해주세요.</strong><br><br>
+                                        <input type="radio" id="habit_nose" name="demo-priority">
+                                        <label for="habit_nose">코를 심하게 곤다.</label>
+                                        <input type="radio" id="habit_phone" name="demo-priority">
+                                        <label for="habit_phone">불끄고 스마트폰을 본다.</label><br>
+                                        <input type="radio" id="habit_eyes" name="demo-priority">
+                                        <label for="habit_eyes">눈을 자주 비빈다.</label>
+                                        <input type="radio" id="habit_home" name="demo-priority">
+                                        <label for="habit_home">야외활동을 자주 하지 않는다.</label><br>
+                                        <input type="radio" id="habit_none" name="demo-priority">
+                                        <label for="habit_none">해당 없음</label><br><br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        </h4>
+                        
+                    </header>
+                    
+                    <div class="prefer" style = "margin-top: 100px;" > </div>
+                    <div class="text-center mt-4" style="text-align:center">
+                        <h3 class="bold-font"><a href="health_recommend" class="button" 
+                            onclick="alert('적립금 1000원이 적립되었습니다!');">결과보기</a></h3>
+                        
+                            
+                        
+                        
+                    </div>
+                    
+			</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
+<style>
+    .radio:hover {
+        border: 1px solid;
+        box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+        outline-color: rgba(255, 255, 255, 0);
+        outline-offset: 15px;
+        text-shadow: 1px 1px 2px #427388;
+    }
+</style>

@@ -61,6 +61,10 @@ app.get('/nbti_result', (req, res)=>{
     res.render('nbti_result')
 });
 
+app.get('/selftest', (req, res)=>{
+    res.render('selftest')
+});
+
 function getFormatDate(date){
     var year = date.getFullYear();              //yyyy
     var month = (1 + date.getMonth());          //M
@@ -144,11 +148,10 @@ app.post('/inquire_transaction_history', function(req, res) {
 });
 
 //입금이체
-app.post('/received_transfer', function(req, res) {
+app.get('/received_transfer', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
     var today = getFormatDate(new Date());
 
-    //등록한 계좌 중 선택해서 해도 좋겠어요 시간 남으면... ^^
     var option = {
         method: "POST",
         url: "https://developers.nonghyup.com/ReceivedTransferAccountNumber.nh",
@@ -168,7 +171,7 @@ app.post('/received_transfer', function(req, res) {
             },
                 "Bncd": "011",
                 "Acno": "3020000002982",
-                "Tram": "300000",
+                "Tram": "1000",
                 "DractOtlt": "출금해가용~^^",
                 "MractOtlt": "적립금" 
         })
@@ -178,6 +181,8 @@ app.post('/received_transfer', function(req, res) {
         var receivedTransferData = JSON.parse(body);
         console.log(receivedTransferData);
         res.json(receivedTransferData);
+        
+        
     });
 });
 

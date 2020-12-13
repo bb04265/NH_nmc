@@ -25,7 +25,8 @@
                    <br>
                 <div class="text-center mt-4" style="text-align:center">
 
-                    <h5 class="bold-font" style="font-size: 30px ; margin-top: 50px;"><a href="health_recommend" class="button">추천상품 보러가기</a></h5>
+                    <h5 class="bold-font" style="font-size: 30px ; margin-top: 50px;"><a href="selftest" class="button" 
+                        >다음으로</a></h5>
 
                 </div>
 			</section>
@@ -90,6 +91,7 @@
                 </script>
                 <script>
                     $("#recommend").click(function(){
+                            alert('적립금 1000원이 적립되었습니다!');
                             $(location).attr('href', 'http://localhost:3000/health_recommend');
                     })
                 </script>
