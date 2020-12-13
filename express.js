@@ -172,8 +172,8 @@ app.get('/received_transfer', function(req, res) {
                 "Bncd": "011",
                 "Acno": "3020000002982",
                 "Tram": "1000", //임시 적립금
-                "DractOtlt": "출금해가용~^^",
-                "MractOtlt": "적립금" 
+                "DractOtlt": "출금해 가용~^^",
+                "MractOtlt": "적립금"
         })
     };
 
@@ -181,8 +181,6 @@ app.get('/received_transfer', function(req, res) {
         var receivedTransferData = JSON.parse(body);
         console.log(receivedTransferData);
         res.json(receivedTransferData);
-        
-        
     });
 });
 
