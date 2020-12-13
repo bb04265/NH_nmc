@@ -130,7 +130,7 @@ app.post('/inquire_transaction_history', function(req, res) {
                 "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
             },
             "Bncd": "011",
-            "Acno": "3020000002982",
+            "Acno": "3020000003222",
             "Insymd": "20201210",
             "Ineymd": today,
             "TrnsDsnc": "A",
@@ -170,7 +170,7 @@ app.post('/received_transfer', function(req, res) {
                 "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
             },
                 "Bncd": "011",
-                "Acno": "3020000002982",
+                "Acno": "3020000003222",
                 "Tram": "1000", //임시 적립금
                 "DractOtlt": "출금해 가용~^^",
                 "MractOtlt": "적립금"
