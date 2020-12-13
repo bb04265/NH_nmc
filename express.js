@@ -21,6 +21,10 @@ app.get('/elements', function(req,res){
     res.render('elements');
 });
 
+app.get('/login', function(req,res){
+    res.render('login');
+});
+
 app.get('/health', function(req, res){
     res.render('health');
 });
@@ -43,6 +47,10 @@ app.get('/nbti_start', (req, res)=>{
 
 app.get('/inquire_balance', (req, res)=>{
     res.render('inquire_balance')
+});
+
+app.get('/account', (req, res)=>{
+    res.render('account')
 });
 
 app.get('/nbti_survey', (req, res)=>{
@@ -116,7 +124,7 @@ app.post('/inquire_transaction_history', function(req, res) {
                 "ApiSvcCd": "ReceivedTransferA",
                 "IsTuno": isTuno,
                 "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
-              },
+            },
             "Bncd": "011",
             "Acno": "3020000002982",
             "Insymd": "20201210",
@@ -194,10 +202,10 @@ app.get('/drawingTransfer', function(req, res) {
                 "ApiSvcCd": "DrawingTransferA",
                 "IsTuno": isTuno,
                 "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
-              },
-              "FinAcno": "00820100007000000000000004413",
-              "Tram": "50000",
-              "DractOtlt": "노릇노릇 야채"
+            },
+            "FinAcno": "00820100007000000000000004413",
+            "Tram": "50000",
+            "DractOtlt": "노릇노릇 야채"
         })
     };
 
