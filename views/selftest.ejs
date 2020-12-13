@@ -93,18 +93,32 @@
                     
                     <div class="prefer" style = "margin-top: 100px;" > </div>
                     <div class="text-center mt-4" style="text-align:center">
-                        <h3 class="bold-font"><a href="health_recommend" class="button" 
-                            onclick="alert('적립금 1000원이 적립되었습니다!');">결과보기</a></h3> 
+                        <h3 class="bold-font">
+                            <a href="javascript:void(0);" class="button" onclick="showMeTheMoney();">결과 보기</a>
+                        </h3>
                     </div>
                     
 			</section>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            function showMeTheMoney() {
+                $.ajax({
+                    url:'/received_transfer',
+                    type : 'POST',
+                    data : {
+                    },
+                    success:function(data){
+                        alert('적립금 1000원이 지급되었습니다!');
+                        location.href="/health_recommend";
+                    }
+                });
+            }
+        </script>
 	</body>
 </html>
 <style>
