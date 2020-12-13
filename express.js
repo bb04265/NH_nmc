@@ -21,6 +21,10 @@ app.get('/elements', function(req,res){
     res.render('elements');
 });
 
+app.get('/login', function(req,res){
+    res.render('login');
+});
+
 app.get('/health', function(req, res){
     res.render('health');
 });
@@ -55,6 +59,10 @@ app.get('/nbti_survey', (req, res)=>{
 
 app.get('/nbti_result', (req, res)=>{
     res.render('nbti_result')
+});
+
+app.get('/selftest', (req, res)=>{
+    res.render('selftest')
 });
 
 function getFormatDate(date){
@@ -120,7 +128,7 @@ app.post('/inquire_transaction_history', function(req, res) {
                 "ApiSvcCd": "ReceivedTransferA",
                 "IsTuno": isTuno,
                 "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
-              },
+            },
             "Bncd": "011",
             "Acno": "3020000002982",
             "Insymd": "20201210",
@@ -140,7 +148,7 @@ app.post('/inquire_transaction_history', function(req, res) {
 });
 
 //입금이체
-app.post('/received_transfer', function(req, res) {
+app.get('/received_transfer', function(req, res) {
     var isTuno = Math.floor(Math.random() * 899999999) + 100000000;
     var today = getFormatDate(new Date());
 
@@ -173,6 +181,8 @@ app.post('/received_transfer', function(req, res) {
         var receivedTransferData = JSON.parse(body);
         console.log(receivedTransferData);
         res.json(receivedTransferData);
+        
+        
     });
 });
 
@@ -197,10 +207,10 @@ app.get('/drawingTransfer', function(req, res) {
                 "ApiSvcCd": "DrawingTransferA",
                 "IsTuno": isTuno,
                 "AccessToken": "61e53b6d3d54329e20c3ff50a2f69b2df0ec25311c5e7649c133f4cf7007b57d"
-              },
-              "FinAcno": "00820100007000000000000004413",
-              "Tram": "50000",
-              "DractOtlt": "노릇노릇 야채"
+            },
+            "FinAcno": "00820100007000000000000004413",
+            "Tram": "50000",
+            "DractOtlt": "노릇노릇 야채"
         })
     };
 
