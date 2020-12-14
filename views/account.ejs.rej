@@ -1,0 +1,26 @@
+diff a/views/account.ejs b/views/account.ejs	(rejected hunks)
+@@ -14,24 +14,6 @@
+             </div>
+             <div class="inner">
+                 <form action="#" method="post">
+-<<<<<<< HEAD
+-                    <div class="field first welcome-font" style="font-size: 20pt;">
+-                        <label for="name">이름</label>
+-                        <input name="name" id="name" type="text" placeholder="Name">
+-                    </div>
+-                    
+-                    <div class="field welcome-font" style="font-size: 20pt;">
+-                        <label for="birth">생년월일</label>
+-                        <input name="birth" id="birth" type="text" placeholder="Birth(ex. 19501214)">
+-                    </div>
+-                    
+-                    <div class="field welcome-font" style="font-size: 20pt;">
+-                        <label for="bank">은행</label>
+-                        <input name="bank" id="bank" type="text" placeholder="Bank">
+-                    </div>
+-                    
+-                    <div class="field welcome-font" style="font-size: 20pt;">
+-=======
+                     <div class="field first welcome-font">
+                         <label for="name">이름</label>
+                         <input name="name" id="name" type="text" placeholder="Name">
